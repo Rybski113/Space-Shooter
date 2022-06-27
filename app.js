@@ -1,20 +1,11 @@
 const grid = document.querySelector('.grid')
-let currentShooterIndex = 202
 const invader =  document.querySelector('.invader')
+let currentShooterIndex = 202
 
 
 let width = 15
 
-const tableEnd = [
-    0,1,2,3,4,5,6,
-    7,8,9,10,11,12,
-    13,14,
-]
-function draw() {
-    for (let i=0; i < tableEnd.length; i++) {
-        squares[tableEnd[i]].classList.add('end')
-    }
-}
+
 
 for (let i = 0; i < 225; i++) {
     const square = document.createElement('div')
@@ -62,9 +53,16 @@ function shoot(e) {
     }
 
 }
-draw()
+
 
 document.addEventListener('keydown', shoot )
 
+function randomInvader() {
+    let randomSquare = squares[Math.floor(Math.random() * 15)]
+    randomSquare.classList.add('invader')
 
-let randomsquare = 
+
+}
+
+let showInvader = setInterval(randomInvader, 1000)
+    
