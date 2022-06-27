@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid')
 let invader =  document.querySelector('.invader')
 let currentShooterIndex = 202
+
 let width = 15
 
 
@@ -69,17 +70,10 @@ let showInvader = setInterval(randomInvader, 700)
 
 
 function moveInvaders() {
-    let currentInvaderIndex = squares[invader]
- 
-  if ( squares[currentInvaderIndex].classList.contains('invader')){
-    squares[currentInvaderIndex].classList.remove('invader')
-    currentInvaderIndex += width
-    squares[currentInvaderIndex].classList.add('invader')
-  } 
+   
+    let currentInvaderIndex = document.querySelectorAll('.invader')
+    console.log(currentInvaderIndex)
 
 }
-
-
-
-
+moveInvaders()
 
