@@ -61,15 +61,16 @@ function randomInvader() {
     let randomSquare = squares[Math.floor(Math.random() * 15)]
    randomSquare.classList.add('invader')
    
-    
- 
+   
+   moveInvaders()
 
 }
-  let showInvader = setInterval(randomInvader, 700)
+let showInvader = setInterval(randomInvader, 700)
 
 
 function moveInvaders() {
-  let invader
+    let currentInvaderIndex = squares[invader]
+ 
   if ( squares[currentInvaderIndex].classList.contains('invader')){
     squares[currentInvaderIndex].classList.remove('invader')
     currentInvaderIndex += width
@@ -78,7 +79,7 @@ function moveInvaders() {
 
 }
 
-moveInvaders()
+
 
 
 
