@@ -83,7 +83,7 @@ function remove() {
 
 function moveInvaders() {
     const leftEdge = alienInvaders[0] % width === 0
-    const rightEdge = alienInvaders[alienInvaders.length -1] % width -1 === width -1
+    const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width -1
     remove()
 
     if(rightEdge && goingRight ) {
@@ -108,7 +108,12 @@ function moveInvaders() {
     }
 
     draw()
-    
-}
 
-invadersId = setInterval (moveInvaders, 200)
+   
+
+    
+    }
+   
+
+
+invadersId = setInterval(moveInvaders, 200)
