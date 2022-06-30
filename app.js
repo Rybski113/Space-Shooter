@@ -6,6 +6,7 @@ let width = 15
 let direction = 1
 let goingRight = true
 let invadersId
+let score = 0
 
 
 
@@ -42,24 +43,7 @@ function moveShooter(e) {
 
 document.addEventListener('keyup', moveShooter)
 
-function shoot(e) {
-    let laserId
-    let currentLaserIndex = currentShooterIndex
-    function moveLaser() {
-        squares[currentLaserIndex].classList.remove('laser')
-        currentLaserIndex -= width
-        squares[currentLaserIndex].classList.add('laser')
-        
 
-    }
-    switch(e.key) {
-        case 'ArrowUp':
-            laserId = setInterval(moveLaser, 200)
-     
-    }
-}
-
-document.addEventListener('keydown', shoot )
 
 
 
@@ -111,11 +95,11 @@ function moveInvaders() {
 
     for( let i = 0; i < alienInvaders.length; i++) {
         if ( alienInvaders[i] > squares.length) {
-            alert("GAME OVER!")
             clearInterval(invadersId)
-            
+            alert("GAME OVER!")
         }
     }
+    
 
    
 
@@ -128,4 +112,31 @@ function moveInvaders() {
    
 
 
-invadersId = setInterval(moveInvaders, 200)
+invadersId = setInterval(moveInvaders, 600)
+
+function shoot(e) {
+    let laserId
+    let currentLaserIndex = currentShooterIndex
+    function moveLaser() {
+        squares[currentLaserIndex].classList.remove('laser')
+        currentLaserIndex -= width
+        squares[currentLaserIndex].classList.add('laser')
+        if (squares[currentLaserIndex].classList.contains('invader')) {
+            squares[currentLaserIndex].classList.remove('laser')
+            squares[currentLaserIndex].classList.remove('invader')
+            score++
+            clearInterval(laserId)
+
+            resultDisplay.innerHTML = score
+        }
+        
+
+    }
+    switch(e.key) {
+        case 'ArrowUp':
+            laserId = setInterval(moveLaser, 200)
+     
+    }
+}
+
+document.addEventListener('keydown', shoot )
