@@ -1,8 +1,11 @@
 const grid = document.querySelector('.grid')
 let invader =  document.querySelector('.invader')
 let currentShooterIndex = 202
-
+let currentInvaderIndex = 7
 let width = 15
+
+
+
 
 
 
@@ -24,7 +27,8 @@ function moveShooter(e) {
 
     switch(e.key) {
         case 'ArrowLeft':
-            if (currentShooterIndex % width !==0) currentShooterIndex -=1
+            if (currentShooterIndex % width !==0)
+             currentShooterIndex -=1
             break
         case 'ArrowRight':
             if (currentShooterIndex % width < width -1) currentShooterIndex +=1
@@ -52,28 +56,19 @@ function shoot(e) {
             laserId = setInterval(moveLaser, 200)
      
     }
-
 }
-
 
 document.addEventListener('keydown', shoot )
 
-function randomInvader() {
-    let randomSquare = squares[Math.floor(Math.random() * 15)]
-   randomSquare.classList.add('invader')
-   
-   
-   moveInvaders()
 
+
+function randomInvaderMove() {
+   squares[currentInvaderIndex].classList.add('invader')
+   squares[currentInvaderIndex].classList.remove('invader')
+   currentInvaderIndex += width
+   squares[currentInvaderIndex].classList.add('invader')
+    
 }
-let showInvader = setInterval(randomInvader, 700)
+//let showInvader = setInterval(randomInvaderMove, 700)
 
-
-function moveInvaders() {
-   
-    let currentInvaderIndex = document.querySelectorAll('.invader')
-    console.log(currentInvaderIndex)
-
-}
-moveInvaders()
 
