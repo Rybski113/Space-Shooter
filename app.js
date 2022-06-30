@@ -73,3 +73,7 @@ function draw() {
 }
 draw()
 
+function moveInvaders() {
+    const leftEdge = alienInvaders[i] % width === 0
+    const RightEdge = alienInvaders[alienInvaders.length -1] % width === width -1
+}
