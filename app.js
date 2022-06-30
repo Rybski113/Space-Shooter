@@ -1,10 +1,12 @@
 const grid = document.querySelector('.grid')
+let resultDisplay = document.getElementById('result')
 let invader =  document.querySelector('.invader')
 let currentShooterIndex = 202
 let width = 15
 let direction = 1
 let goingRight = true
 let invadersId
+
 
 
 
@@ -106,6 +108,16 @@ function moveInvaders() {
     for( let i = 0; i < alienInvaders.length; i++) {
         alienInvaders[i] += direction
     }
+
+    for( let i = 0; i < alienInvaders.length; i++) {
+        if ( alienInvaders[i] > squares.length) {
+            alert("GAME OVER!")
+            clearInterval(invadersId)
+            
+        }
+    }
+
+   
 
     draw()
 
