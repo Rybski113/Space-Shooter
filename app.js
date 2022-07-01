@@ -101,7 +101,7 @@ function moveInvaders() {
     }
 
     for( let i = 0; i < alienInvaders.length; i++) {
-        if(!squares[alienInvaders[i]].classList.contains('invader')){
+        if(score === 30){
             clearInterval(invadersId)
             alert("YOU WON!")
         }
