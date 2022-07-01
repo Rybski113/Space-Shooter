@@ -99,15 +99,18 @@ function moveInvaders() {
             alert("GAME OVER!")
         }
     }
+
+    for( let i = 0; i < alienInvaders.length; i++) {
+        if(!squares[alienInvaders[i]].classList.contains('invader')){
+            clearInterval(invadersId)
+            alert("YOU WON!")
+        }
+    }
     
 
    
-
     draw()
-
-   
-
-    
+ 
     }
    
 
