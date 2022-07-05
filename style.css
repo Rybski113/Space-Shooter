@@ -1,16 +1,21 @@
 body {
     text-align: center;
     align-items: center;
+    background-color: yellow;
 }
 
+h1 {
+    font-size: 68px;
+    font-weight: bold;
+}
 
 .grid {
     width: 600px;
     height: 600px;
-    border: 2px solid black;
-    margin-left: auto;
+    border: 4px solid red;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     background-color: #000000;
@@ -30,8 +35,6 @@ body {
 .laser {
     background-color: green;
 }
-
-
 
 .invader {
 
