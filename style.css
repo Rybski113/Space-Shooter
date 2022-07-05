@@ -5,24 +5,25 @@ body {
 
 
 .grid {
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
     border: 2px solid black;
     margin-left: auto;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
+    background-color: #000000;
 }
 
 .grid div {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 }
 
 .shooter {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background-color: red;
 }
 
@@ -33,8 +34,11 @@ body {
 
 
 .invader {
-    background-color: purple;
-    width: 20px;
-    height: 20px;
+
+    background-image: url("img/invader.jpg");
+    background-size: cover;
+    width: 40px;
+    height: 40px;
     border-radius: 20px;
+    
 }
