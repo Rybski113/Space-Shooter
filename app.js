@@ -103,6 +103,16 @@ function moveInvaders() {
             alert("GAME OVER!")
         }
     }
+
+    for( let i = 0; i < alienInvaders.length; i++) {
+        if ( alienInvaders.length === aliensRemoved.length) {
+            clearInterval(invadersId)
+            alert("YOU WON!")
+        }
+    }
+
+    
+
     draw()
  
     }

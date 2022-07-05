@@ -1,3 +1,9 @@
+body {
+    text-align: center;
+    align-items: center;
+}
+
+
 .grid {
     width: 300px;
     height: 300px;
