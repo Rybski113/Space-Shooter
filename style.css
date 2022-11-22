@@ -2,7 +2,6 @@ body {
     text-align: center;
     align-items: center;
     background-color: yellow;
-    background-image: url(img/Background.jpg);
 }
 
 body h1 {
@@ -51,20 +50,15 @@ h1 {
     width: 40px;
     height: 40px;
     background-color: red;
-    background-image:url("img/shooter.png") ;
-    background-size: cover;
+
 }
 
 .laser {
-    background-image:url("img/dot.jpg") ;
-    background-size: cover;
+    background-color: green;
     
 }
 
 .invader {
-
-    background-image: url("img/invader.jpg");
-    background-size: cover;
     width: 40px;
     height: 40px;
     border-radius: 20px;
