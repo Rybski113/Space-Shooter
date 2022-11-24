@@ -1,14 +1,20 @@
 document.addEventListener('DOMContentLoaded', ()=> {
 
-    const grid = document.getElementById('grid');
+    const grid = document.querySelector('.grid');
     let platformCount = 5;
 
 
     class Platform {
-        constructor() {
+        constructor(newPlatformBottom) {
             this.bottom = newPlatformBottom;
             this.left = Math.random() * 515;
-            
+            this.visual = document.createElement('div');
+
+            const visual = this.visual;
+            visual.classList.add('platform');
+            visual.style.left = this.left + 'px';
+            visual.style.bottom = this.bottom + 'px';
+            grid.appendChild(visual)
         }
     }
 
