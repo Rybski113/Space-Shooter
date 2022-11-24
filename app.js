@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     firstPlatform.classList.remove('platform');
                     platforms.shift()
                     console.log(platforms)
+                    let newPlatform = new Platform(600);
+                    platforms.push(newPlatform)
                 }
             })
         
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     function start() {
         createPlatforms()
-        setInterval(movePlatforms, 30) 
+        setInterval(movePlatforms, 60) 
     }
    // button later
     start()
