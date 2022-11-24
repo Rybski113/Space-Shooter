@@ -1,14 +1,19 @@
 document.addEventListener('DOMContentLoaded', ()=> {
 
     const grid = document.querySelector('.grid');
+    const invader = document.createElement('div')
+
     let platformCount = 5;
     let platforms = [];
+
+
+   
 
 
     class Platform {
         constructor(newPlatformBottom) {
             this.bottom = newPlatformBottom;
-            this.left = Math.random() * 515;
+            this.left = Math.random() * 315;
             this.visual = document.createElement('div');
 
             const visual = this.visual;
@@ -19,21 +24,31 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
     }
 
-    function createplatforms() {
+
+    function createPlatforms() {
         for (let i=0; i < platformCount; i++) {
           let platformGap = 600 / platformCount;
           let newPlatformBottom = 100 + i * platformGap;
           let newPlatform = new Platform(newPlatformBottom);
+          platforms.push(newPlatform);
+          console.log(platforms)
         }
     }
 
     function movePlatforms() {
+        
+            platforms.forEach(platform => {
+                platform.bottom -= 4
+                let visual = platform.visual
+                visual.style.bottom = platform.bottom + 'px'
 
+            })
+        
     }
 
     function start() {
-        createplatforms()
-        movePlatforms()
+        createPlatforms()
+        setInterval(movePlatforms, 30) 
     }
    // button later
     start()
