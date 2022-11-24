@@ -72,6 +72,11 @@ let showInvader = setInterval(randomInvader, 700)
 function moveInvaders() {
    
     let currentInvaderIndex = document.querySelectorAll('.invader')
+
+    
+    
+  
+    
     console.log(currentInvaderIndex)
 
 }
