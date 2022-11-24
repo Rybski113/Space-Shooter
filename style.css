@@ -13,12 +13,7 @@ body {
     text-align: center;
 }
 
-.DOODLER {
-    width: 60px;
-    height: 85px;
-    background-color: red;
-    position: absolute;
-}
+
 
 .platform {
     width: 85px;
