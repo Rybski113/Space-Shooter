@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
           let newPlatformBottom = 100 + i * platformGap;
           let newPlatform = new Platform(newPlatformBottom);
           platforms.push(newPlatform);
-          console.log(platforms)
         }
     }
 
@@ -42,6 +41,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 let visual = platform.visual
                 visual.style.bottom = platform.bottom + 'px'
 
+                if (platform.bottom < 10) {
+                    firstPlatform = platforms[0].visual;
+                    firstPlatform.classList.remove('platform');
+                    platforms.shift()
+                    console.log(platforms)
+                }
             })
         
     }
