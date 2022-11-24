@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     const grid = document.querySelector('.grid');
     let platformCount = 5;
+    let platforms = [];
 
 
     class Platform {
@@ -26,8 +27,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
     }
 
+    function movePlatforms() {
+
+    }
+
     function start() {
         createplatforms()
+        movePlatforms()
     }
    // button later
     start()
