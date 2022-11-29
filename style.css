@@ -12,6 +12,8 @@ body {
     font-size: 200px;
     text-align: center;
     border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .grid div {
@@ -19,6 +21,9 @@ body {
     height: 40px;
 }
 
+.shooter {
+    background-color: blue;
+}
 
 
 .platform {

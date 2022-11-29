@@ -2,17 +2,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     const grid = document.querySelector('.grid');
     const invader = document.createElement('div')
-
+    let currentShooterIndex = 135;
     let platformCount = 5;
     let platforms = [];
 
 
-    for ( let i = 0; i < 225; i++) {
+    for ( let i = 0; i < 140; i++) {
         const square = document.createElement('div')
         grid.appendChild(square)
     }
     
     const squares = Array.from(document.querySelectorAll('.grid div')) 
+
+    squares[currentShooterIndex].classList.add('shooter')
 
 
     class Platform {
