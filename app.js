@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let platforms = [];
 
 
-   
+    for ( let i = 0; i < 225; i++) {
+        const square = document.createElement('div')
+        grid.appendChild(square)
+    }
+    
+    const squares = Array.from(document.querySelectorAll('.grid div')) 
 
 
     class Platform {
