@@ -2,20 +2,24 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     const grid = document.querySelector('.grid');
     const invader = document.createElement('div')
-    let currentShooterIndex = 135;
+    const shooter = document.createElement('div');
+
     let platformCount = 5;
     let platforms = [];
-
-
-    for ( let i = 0; i < 140; i++) {
-        const square = document.createElement('div')
-        grid.appendChild(square)
-    }
     
-    const squares = Array.from(document.querySelectorAll('.grid div')) 
+    let shooterLeftSpace = 65;
+    let startpoint = 10;
+    let shooterBottomSpace = startpoint;
 
-    squares[currentShooterIndex].classList.add('shooter')
+    function createShooter() {
+        grid.appendChild(shooter);
+        shooter.classList.add('shooter');
+        shooterLeftSpace = platforms[0].left;
+        shooter.style.left = shooterLeftSpace + 'px'
+        shooter.style.bottom = shooterBottomSpace + 'px'
+    }
 
+    
 
     class Platform {
         constructor(newPlatformBottom) {
@@ -62,6 +66,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     function start() {
         createPlatforms()
+        createShooter()
         setInterval(movePlatforms, 60) 
     }
    // button later
