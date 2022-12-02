@@ -21,12 +21,25 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
     function moveShooter(e) {
-        shooter.classList.remove('shooter');
+        switch(e.key) {
+            case 'ArrowLeft' :
+                shooter.classList.remove('shooter');
+                shooterLeftSpace -=10;
+                shooter.style.left = shooterLeftSpace + 'px'
+                shooter.classList.add('shooter');
+             break  
+             case 'ArrowRight' :
+                shooter.classList.remove('shooter');
+                shooterLeftSpace +=10;
+                shooter.style.left = shooterLeftSpace + 'px'
+                shooter.classList.add('shooter');
+             break           
+        }
+          
         
-
     }
 
-    document.addEventListener('click', moveShooter);
+    document.addEventListener('keyup', moveShooter);
     
 
     class Platform {
