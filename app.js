@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     let platformCount = 5;
     let platforms = [];
-    
+    let width = 1;
     let shooterLeftSpace = 180;
     let startpoint = 1;
     let shooterBottomSpace = startpoint;
@@ -22,10 +22,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     function moveShooter(e) {
         shooter.classList.remove('shooter');
-        switch(e.key) {
-            case 'ArrowLeft':
-        }
+        
+
     }
+
+    document.addEventListener('click', moveShooter);
     
 
     class Platform {
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         createPlatforms()
         setInterval(movePlatforms, 60) 
         createShooter()
+        
         
     }
    // button later
