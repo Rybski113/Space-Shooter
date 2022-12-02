@@ -21,18 +21,24 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
     function moveShooter(e) {
-        switch(e.key) {
+        switch(e.key) { 
+            
             case 'ArrowLeft' :
-                shooter.classList.remove('shooter');
-                shooterLeftSpace -=10;
-                shooter.style.left = shooterLeftSpace + 'px'
-                shooter.classList.add('shooter');
+                if (shooterLeftSpace !== 0) {
+                    shooter.classList.remove('shooter');
+                    shooterLeftSpace -=20;
+                    shooter.style.left = shooterLeftSpace + 'px'
+                    shooter.classList.add('shooter');
+                }
              break  
              case 'ArrowRight' :
-                shooter.classList.remove('shooter');
-                shooterLeftSpace +=10;
-                shooter.style.left = shooterLeftSpace + 'px'
-                shooter.classList.add('shooter');
+                if (shooterLeftSpace !== 380) {
+                    shooter.classList.remove('shooter');
+                    shooterLeftSpace +=20;
+                    shooter.style.left = shooterLeftSpace + 'px'
+                    shooter.classList.add('shooter');
+                }
+                
              break           
         }
           
