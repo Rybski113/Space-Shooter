@@ -7,18 +7,25 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let platformCount = 5;
     let platforms = [];
     
-    let shooterLeftSpace = 65;
-    let startpoint = 10;
+    let shooterLeftSpace = 180;
+    let startpoint = 1;
     let shooterBottomSpace = startpoint;
 
     function createShooter() {
         grid.appendChild(shooter);
         shooter.classList.add('shooter');
-        shooterLeftSpace = platforms[0].left;
+        //shooterLeftSpace = platforms[0].left;
         shooter.style.left = shooterLeftSpace + 'px'
         shooter.style.bottom = shooterBottomSpace + 'px'
     }
 
+
+    function moveShooter(e) {
+        shooter.classList.remove('shooter');
+        switch(e.key) {
+            case 'ArrowLeft':
+        }
+    }
     
 
     class Platform {
@@ -66,8 +73,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     function start() {
         createPlatforms()
-        createShooter()
         setInterval(movePlatforms, 60) 
+        createShooter()
+        
     }
    // button later
     start()
