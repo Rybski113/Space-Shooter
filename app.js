@@ -3,62 +3,23 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const grid = document.querySelector('.grid');
     const shooter = document.createElement('div');
 
-    const squares = Array.from(document.querySelectorAll('.grid div'))
+ 
 
     let platformCount = 5;
     let platforms = [];
     let width = 15;
-    let shooterLeftSpace = 180;
-    let startpoint = 1;
-    let shooterBottomSpace = startpoint;
-
-    function createShooter() {
-        grid.appendChild(shooter);
-        shooter.classList.add('shooter');
-        //shooterLeftSpace = platforms[0].left;
-        shooter.style.left = shooterLeftSpace + 'px'
-        shooter.style.bottom = shooterBottomSpace + 'px'
-    }
+    let currentShooterIndex = 390;
 
 
-    function moveShooter(e) {
-        switch(e.key) { 
-            
-            case 'ArrowLeft' :
-                if (shooterLeftSpace !== 0) {
-                    shooter.classList.remove('shooter');
-                    shooterLeftSpace -=20;
-                    shooter.style.left = shooterLeftSpace + 'px'
-                    shooter.classList.add('shooter');
-                }
-             break  
-             case 'ArrowRight' :
-                if (shooterLeftSpace !== 380) {
-                    shooter.classList.remove('shooter');
-                    shooterLeftSpace +=20;
-                    shooter.style.left = shooterLeftSpace + 'px'
-                    shooter.classList.add('shooter');
-                }
-                
-             break           
-        }
-    }
-    document.addEventListener('keyup', moveShooter);
-
-
-    function shoot(e) {
+    for (let i = 0; i < 400; i++) {
+        const square = document.createElement('div')
+        grid.appendChild(square)
+      }
     
-        switch(e.key) {
-            case ' ':
-            console.log('fire!')
-            break
-        }
-        
-        
+    const squares = Array.from(document.querySelectorAll('.grid div'))
 
-    }
+    squares[currentShooterIndex].classList.add('shooter')
 
-    document.addEventListener('keyup', shoot);
     
 
     class Platform {
@@ -107,7 +68,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     function start() {
         createPlatforms()
         setInterval(movePlatforms, 60) 
-        createShooter()
+  
         
         
     }
