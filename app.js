@@ -46,6 +46,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
     }
 
     document.addEventListener('keyup', moveShooter);
+
+    function shoot() {
+
+    }
+
+    document.addEventListener('keyup', shoot);
     
 
     class Platform {
