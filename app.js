@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', ()=> {
 
     const grid = document.querySelector('.grid');
-    const invader = document.createElement('div')
     const shooter = document.createElement('div');
+
+    const squares = Array.from(document.querySelectorAll('.grid div'))
 
     let platformCount = 5;
     let platforms = [];
-    let width = 1;
+    let width = 15;
     let shooterLeftSpace = 180;
     let startpoint = 1;
     let shooterBottomSpace = startpoint;
@@ -41,13 +42,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 
              break           
         }
-          
-        
     }
-
     document.addEventListener('keyup', moveShooter);
 
-    function shoot() {
+
+    function shoot(e) {
+    
+        switch(e.key) {
+            case ' ':
+            console.log('fire!')
+            break
+        }
+        
+        
 
     }
 

@@ -35,3 +35,10 @@ body {
     background-color: green;
     position: absolute;
 }
+
+.laser {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    position: absolute;
+}
