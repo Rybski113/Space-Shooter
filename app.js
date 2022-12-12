@@ -20,6 +20,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     squares[currentShooterIndex].classList.add('shooter')
 
+    function moveShooter(e) {
+        squares[currentShooterIndex].classList.remove('shooter');
+         
+        switch(e.key) {
+           case 'ArrowLeft': 
+           currentShooterIndex -=1;
+           break
+           case 'ArrowRight':
+            currentShooterIndex +=1;
+        }
+        squares[currentShooterIndex].classList.add('shooter');
+    }
+
+  document.addEventListener('keydown', moveShooter)
+
+  
     
 
     class Platform {
@@ -68,9 +84,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     function start() {
         createPlatforms()
         setInterval(movePlatforms, 60) 
-  
-        
-        
+        //moveShooter()
     }
    // button later
     start()
