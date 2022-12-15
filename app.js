@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     let platformCount = 5;
     let platforms = [];
-    let width = 15;
+    let width = 381;
     let currentShooterIndex = 390;
 
 
@@ -20,14 +20,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     squares[currentShooterIndex].classList.add('shooter')
 
+
+
     function moveShooter(e) {
         squares[currentShooterIndex].classList.remove('shooter');
-         
         switch(e.key) {
            case 'ArrowLeft': 
+           if (currentShooterIndex  > width -1  ) 
            currentShooterIndex -=1;
            break
            case 'ArrowRight':
+            if (currentShooterIndex < width + 18)
             currentShooterIndex +=1;
         }
         squares[currentShooterIndex].classList.add('shooter');
@@ -84,7 +87,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     function start() {
         createPlatforms()
         setInterval(movePlatforms, 60) 
-        //moveShooter()
+        
     }
    // button later
     start()
