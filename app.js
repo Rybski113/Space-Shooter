@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     let platformCount = 5;
     let platforms = [];
-    let width = 381;
-    let currentShooterIndex = 390;
+    let width = 20;
+    let currentShooterIndex = 389;
 
 
     for (let i = 0; i < 400; i++) {
@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
         squares[currentShooterIndex].classList.remove('shooter');
         switch(e.key) {
            case 'ArrowLeft': 
-           if (currentShooterIndex  > width -1  ) 
+           
            currentShooterIndex -=1;
            break
            case 'ArrowRight':
-            if (currentShooterIndex < width + 18)
+            
             currentShooterIndex +=1;
         }
         squares[currentShooterIndex].classList.add('shooter');
@@ -38,6 +38,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
   document.addEventListener('keydown', moveShooter)
 
+
+  function shoot(e) {
+      let laserId;
+      let currentLaserIndex = currentShooterIndex;
+        function moveLaser() {
+            squares[currentLaserIndex].classList.remove('laser');
+            currentLaserIndex -= width;
+            squares[currentLaserIndex].classList.add('laser')
+        }
+        switch(e.key) {
+            case ' ':
+                laserId = setInterval(moveLaser,200)
+        }
+  }
+
+  document.addEventListener('keydown', shoot)
   
     
 
